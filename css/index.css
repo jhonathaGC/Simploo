@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+/*INICIO HEADER*/
+header {
+    width: auto;
+    height: 40px;
+    padding: 0.8% 2% 1% 2%;
+    background: #8A10BD;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    cursor: pointer;
+}
+
+.logo:hover{
+    transform: scale(1);
+}
+.icons_header {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icons_header img {
+    cursor: pointer;
+    filter: hue-rotate(180deg) saturate(100%);
+}
+
+/*FIM HEADER*/
+/*INICIO NAVBAR*/
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav button {
+    position: relative;
+    color: #8A10BD;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 1% 0 1% 0;
+}
+
+nav button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background-color: purple;
+    height: 3px;
+    transition: width 1s ease;
+}
+
+nav button:hover::after {
+    width: 100%;
+}
+
+/*FIM NAVBAR*/
+
+/*Ajustando o carrossel*/
+.container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.container img {
+    width: 80%;
+    height: 100%;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 0, 128, 0.5);
+    /* Tom roxo com 50% de transparência */
+    opacity: 0;
+    /* Começa invisível */
+    transition: opacity 0.3s ease;
+    /* Transição suave ao passar o mouse */
+}
+
+.container:hover::after {
+    opacity: 1;
+    /* Torna o overlay visível ao passar o mouse */
+}
+
+/*FIM CARROSEL*/
